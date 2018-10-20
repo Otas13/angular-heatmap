@@ -1,27 +1,34 @@
-# Heatmap
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Angular heatmapjs wrapper
+![promo](https://i.imgur.com/4opAXOT.png)
+## Usage 
+app.module
+```
+import {HeatmapComponent} from 'angular-heatmap'
+declarations: [
+    ...
+    HeatmapComponent,
+    ...
+  ],
+  ```
+  in project
+```<ng-heatmap [active]="true" [hidden]="false" [(heatmapData)]="twoWayBind"></ng-heatmap>```
+## Properties
+| Name                     | Default                                                                                 | Description                                 |
+|--------------------------|-----------------------------------------------------------------------------------------|---------------------------------------------|
+| @Input() hidden: boolean | false                                                                                   |                                             |
+| @Input() active: boolean | true                                                                                    | un/subscribe to mouse events                |
+| heatmapData: any         | null                                                                                    | two-way property   source of heatmap obejct |
+| @Input() config: any     | ``` {maxOpacity: .6, radius: 15, blur: .90, backgroundColor: 'rgba(0, 0, 58, 0.96)'} ```| config for heatmap                          |
+## Styling
+Default class ```.heatmap``` can be overwritten by passing ```class``` property to ```<ng-heatmap>``` component.
+```
+.heatmap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: .5;
+  z-index: 9;
+}
+```
