@@ -1,12 +1,14 @@
 # Angular heatmapjs wrapper
 ![promo](https://i.imgur.com/4opAXOT.png)
 ## Usage 
+install heatmapjs
+```npm i heatmapjs --save```
 app.module
 ```
-import {HeatmapComponent} from 'angular-heatmap'
-declarations: [
+import { AngularHeatmapModule } from 'ng-heatmap';
+imports: [
     ...
-    HeatmapComponent,
+    AngularHeatmapModule,
     ...
   ],
   ```
@@ -32,3 +34,4 @@ Default class ```.heatmap``` can be overwritten by passing ```class``` property 
   z-index: 9;
 }
 ```
+
